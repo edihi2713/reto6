@@ -1,14 +1,13 @@
 require 'sinatra'
-
+require 'sinatra/cookies'
 
 get '/' do
 
 	unless cookies[:suma]
       cookies[:suma] = 0
-      end
-
+     end
+     
       @suma = cookies[:suma]
-      
 	  erb :index
 end
 
