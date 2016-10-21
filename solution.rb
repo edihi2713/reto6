@@ -1,14 +1,14 @@
 require 'sinatra'
-require 'sinatra/cookies'
+
 
 get '/' do
-
-	unless cookies[:suma]
-      cookies[:suma] = 0
-     end
-     
-      cookies[:suma]= cookies[:suma].to_i+1
-      @suma = cookies[:suma]
-	  erb :index
-	  
+  @suma = params[:suma].to_i
+  erb :index
 end
+
+
+post '/' do
+  @suma= params[:num].to_i + 1
+  erb :index
+end
+
