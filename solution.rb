@@ -7,12 +7,8 @@ get '/' do
       cookies[:suma] = 0
      end
      
+      cookies[:suma]= cookies[:suma].to_i+1
       @suma = cookies[:suma]
 	  erb :index
-end
-
-post '/' do
-  cookies[:suma]= cookies[:suma].to_i+1
-  @suma = cookies[:suma]
-  erb :index
+	  
 end
